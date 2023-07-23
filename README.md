@@ -8,5 +8,5 @@ https://vermashaurya.github.io/fcc-websites/CatPhotoApp/catphotoapp.html
 
 Project2 - CSS integration on HTML
 Published online hosted link - 
-https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html
-(A designed website displaying well-aligned menu)
+https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html        
+(A designed website displaying a well-aligned menu)
