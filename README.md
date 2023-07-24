@@ -15,3 +15,11 @@ CSS integration on HTML
 Published online hosted link -                                      
 <a href="https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html">CafeMenu website</a>        
 (A designed website displaying a well-aligned menu)
+
+
+<h2>Porject3 -</h2>
+
+Complete CSS play-around 
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">ColorMarkers website</a>
+(A display of CSS functionalities with multiple div elements)
