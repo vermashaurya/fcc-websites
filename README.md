@@ -20,6 +20,6 @@ Published online hosted link -
 <h2>Porject3 -</h2>
 
 Complete CSS play-around 
-Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">ColorMarkers website</a>
+Published online hosted link - <br>
+<a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">ColorMarkers website</a> <br>
 (A display of CSS functionalities with multiple div elements)
