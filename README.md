@@ -1,6 +1,12 @@
 # fcc-websites
 Assisted website development projects from freecodecamp.org 
-                                                                              
+
+<style>
+  body {
+    background-color: burlywood;
+  }
+</style>
+                                                                            
 
 <h2>Project1 -</h2>                                                              
 
