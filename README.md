@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
-  <h1><fieldset>fcc-websites</fieldset></h1>
+  <title><h1><fieldset>fcc-websites</fieldset></h1></title>
 <em>Website development projects with freeCodeCamp.org</em>
   </head>
 <body>
