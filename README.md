@@ -28,7 +28,6 @@ fieldset {
   width: 70%;
   margin: 0 auto;
 }
-
       </style>
       </foreignObject>
       </svg>
