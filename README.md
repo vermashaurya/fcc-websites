@@ -5,14 +5,14 @@
 <em>Website development projects with freeCodeCamp.org</em>
   </head>
 <body>
-<h2>Project1 -</h2><hr>                
+<h2>Project1 -</h2>                
 <br>
 HTML implementation,
 Published online hosted link -                                         
 <a href="https://vermashaurya.github.io/fcc-websites/CatPhotoApp/catphotoapp.html">CatPhotoApp website</a><br>       
 (A simple website structure with a form)
 
-<h2>Project2 -</h2><hr>              
+<h2>Project2 -</h2>              
 <br>
 CSS integration on HTML
 Published online hosted link -                                      
@@ -21,14 +21,14 @@ Published online hosted link -
 (A designed website displaying a well-aligned menu)
 
 
-<h2>Project3 -</h2><hr>
+<h2>Project3 -</h2>
 <br>
 Complete CSS play-around 
 Published online hosted link -
 <a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">ColorMarkers website</a> <br>
 (A display of CSS functionalities with multiple div elements)
 
-<h2>Project4 -</h2><hr>
+<h2>Project4 -</h2>
 <br>
 Balanced, harmonious frontend
 Published online hosted link -
