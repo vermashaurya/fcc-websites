@@ -2,7 +2,7 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <h1><fieldset>fcc-websites</fieldset></h1>
-<em>Website development projects with freecodecamp.org</em>
+<em>Website development projects with freeCodeCamp.org</em>
   </head>
 <body>
 <h2>Project1 -</h2><hr>                
