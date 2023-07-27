@@ -1,10 +1,4 @@
 <html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-  <h1><fieldset>fcc-websites</fieldset></h1>
-<em>Website development projects with freeCodeCamp.org</em>
-  </head>
-<body>
   <svg fill="none" viewBox="0 0 400 400" width="400" height="400">
     <foreignObject width="100%" height="100%">
       <style>
@@ -38,6 +32,12 @@ fieldset {
       </style>
       </foreignObject>
       </svg>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <h1><fieldset>fcc-websites</fieldset></h1>
+<em>Website development projects with freeCodeCamp.org</em>
+  </head>
+<body>
 <h2>Project1 -</h2><hr>                
 <br>
 HTML implementation,
