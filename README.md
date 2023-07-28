@@ -1,5 +1,6 @@
 <html>
 <head>
+  <title>Shaurya's Projects</title>
   <link rel="stylesheet" href="styles.css">
 <em>Website development projects with freeCodeCamp.org</em>
   </head>
