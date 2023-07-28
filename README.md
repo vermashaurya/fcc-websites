@@ -1,8 +1,7 @@
 <html>
 <head>
-  <title>Shaurya's Projects</title>
   <link rel="stylesheet" href="styles.css">
-<em>Website development projects with freeCodeCamp.org</em>
+<em>Website development projects with freeCodeCamp.org</em><br>
   </head>
 <body>
 <h2>Project1 -</h2>                
