@@ -40,5 +40,12 @@ Diving into CSS properties
 Published online hosted link -
 <a href="https://vermashaurya.github.io/fcc-websites/RothkoPainting/rothkopainting.html">RothkoPainting website</a> <br>
 (A CSS canvas for its properties)
-  </body>
+
+<h2>Project6 -</h2>
+<br>
+Delve into CSS Flex 
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/photogallery.html">PhotoGallery website</a> <br>
+(Exploring the CSS Flexbox property)
+</body>
 </html>
