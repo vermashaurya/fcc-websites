@@ -33,5 +33,12 @@ Balanced, harmonious frontend
 Published online hosted link -
 <a href="https://vermashaurya.github.io/fcc-websites/RegistrationForm/registrationform.html"><strong>RegistrationForm website</strong></a> <br>
 (Various input tags, best SEO practices website)
+
+<h2>Project5 -</h2>
+<br>
+Diving into CSS properties 
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/RothkoPainting/rothkopainting.html">RothkoPainting website</a> <br>
+(A CSS canvas for its properties)
   </body>
 </html>
