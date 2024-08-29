@@ -52,7 +52,7 @@ Published online hosted link -
 <br>
 Careful Div Craft 
 Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/nutritionlabel.html">NutritionLabel website</a> <br>
+<a href="https://vermashaurya.github.io/fcc-websites/NutritionLabel/nutritionlabel.html">NutritionLabel website</a> <br>
 (Multiple divs that work together in harmony)
 </body>
 </html>
