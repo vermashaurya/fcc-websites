@@ -47,5 +47,12 @@ Delve into CSS Flex
 Published online hosted link -
 <a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/photogallery.html">PhotoGallery website</a> <br>
 (Exploring the CSS Flexbox property)
+
+<h2>Project7 -</h2>
+<br>
+Careful Div Craft 
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/nutritionlabel.html">NutritionLabel website</a> <br>
+(Multiple divs that work together in harmony)
 </body>
 </html>
