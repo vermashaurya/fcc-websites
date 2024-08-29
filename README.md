@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="README.css">
 <em>Website development projects with freeCodeCamp.org</em><br>
   </head>
 <body>
