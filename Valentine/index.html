@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine? 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-1: #ff9aa9;
+      --bg-2: #ffd2c7;
+      --bg-3: #ffe6a7;
+      --ink: #2a1b1e;
+      --accent: #ff4d6d;
+      --accent-deep: #d90429;
+      --glass: rgba(255,255,255,0.7);
+      --shadow: rgba(21, 12, 13, 0.2);
+      --glow: rgba(255, 77, 109, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Space Grotesk', sans-serif;
+      background: radial-gradient(1200px 800px at 10% 10%, #fff2f6 0%, transparent 60%),
+                  radial-gradient(900px 600px at 90% 20%, #fff8de 0%, transparent 65%),
+                  linear-gradient(130deg, var(--bg-1), var(--bg-2) 55%, var(--bg-3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: var(--ink);
+      transition: background 0.8s ease;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: -20vmax;
+      background: conic-gradient(from 90deg, rgba(255,255,255,0.25), rgba(255,255,255,0) 30%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0));
+      animation: drift 24s linear infinite;
+      z-index: 0;
+      filter: blur(12px);
+      opacity: 0.6;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+      background-size: 3px 3px;
+      opacity: 0.25;
+      mix-blend-mode: multiply;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body.yes-mode {
+      background: radial-gradient(900px 600px at 20% 10%, #fff0f5 0%, transparent 55%),
+                  linear-gradient(140deg, #ff6b85, #ff8fab 55%, #ffd6a5);
+    }
+
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .card {
+      position: relative;
+      z-index: 5;
+      background: var(--glass);
+      padding: 3.5rem 3rem 4rem;
+      border-radius: 32px;
+      box-shadow: 0 30px 60px var(--shadow);
+      text-align: center;
+      max-width: 560px;
+      width: 92%;
+      margin: auto;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    body.yes-mode .card {
+      opacity: 0;
+      transform: scale(0.93) translateY(10px);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.6rem;
+      color: var(--accent-deep);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: rgba(33, 20, 23, 0.8);
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.6rem;
+      margin-top: 1.5rem;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 0.95rem 2.4rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .yes {
+      background: linear-gradient(135deg, var(--accent), #ff8fab);
+      color: #fff;
+      box-shadow: 0 12px 30px var(--glow);
+    }
+
+    .yes:hover { transform: translateY(-3px) scale(1.02); }
+
+    .no-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .no {
+      background: rgba(255,255,255,0.8);
+      color: #6b5760;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .emoji {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      opacity: 0;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none;
+    }
+
+    .no-wrapper:hover .emoji {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-6px);
+    }
+
+    .photo {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+      animation: floatPhoto 10s ease-in-out infinite, rotatePhoto 14s ease-in-out infinite;
+      z-index: 2;
+      border: 6px solid rgba(255,255,255,0.8);
+    }
+
+    @keyframes rotatePhoto {
+      0%, 100% { transform: rotate(-3deg) scale(1); }
+      50% { transform: rotate(3deg) scale(1.08); }
+    }
+
+    @keyframes floatPhoto {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    .final {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 1s ease, transform 1s ease;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    body.yes-mode .final {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .final h1 { font-size: 3rem; margin-bottom: 0.8rem; }
+    .final p { font-size: 1.25rem; max-width: 520px; }
+
+    .journey-link {
+      margin-top: 1.5rem;
+      text-decoration: none;
+      color: #fff;
+      padding: 0.95rem 2.6rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.5);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      transition: transform 0.25s ease, background 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .journey-link:hover { transform: translateY(-2px); background: rgba(255,255,255,0.32); }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart,
+    .sparkle {
+      position: absolute;
+      animation: floatHeart linear infinite;
+      user-select: none;
+      filter: drop-shadow(0 6px 10px rgba(255, 77, 109, 0.35));
+    }
+
+    .sparkle {
+      color: rgba(255, 255, 255, 0.9);
+      animation: driftSparkle ease-in-out infinite;
+    }
+
+    @keyframes floatHeart {
+      from {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+      }
+      10% { opacity: 0.9; }
+      to {
+        transform: translateY(-12vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    @keyframes driftSparkle {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.9; }
+      50% { transform: translateY(-30px) translateX(10px); opacity: 0.4; }
+    }
+
+    @keyframes drift {
+      from { transform: rotate(0deg) scale(1.05); }
+      to { transform: rotate(360deg) scale(1.05); }
+    }
+
+    @media (max-width: 720px) {
+      .photo { width: 70px; height: 70px; border-radius: 18px; }
+      h1 { font-size: 2.15rem; }
+      .card { padding: 2.8rem 2.2rem 3.2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="scene">
+    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 1" style="top:8%; left:12%" />
+    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 2" style="top:15%; right:10%" />
+    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 3" style="top:45%; left:5%" />
+    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 4" style="top:60%; right:6%" />
+    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 5" style="bottom:12%; left:18%" />
+    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 6" style="bottom:10%; right:20%" />
+
+    <div class="card">
+      <div class="badge">For you, always ✨</div>
+      <h1>Hey my love</h1>
+      <p>Every moment with you feels like my favorite place to be. I wanted to ask you something special, and I made a little world for us.</p>
+      <h1>Will you be my Valentine?</h1>
+
+      <div class="buttons">
+        <button class="yes" id="yesBtn">Yes 💖</button>
+
+        <div class="no-wrapper" id="noWrapper" style="padding:40px">
+          <span class="emoji" id="emoji">😠</span>
+          <button class="no" id="noBtn">No 🙈</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="final" id="yesScene">
+      <h1>YAY!!! 🥰💞</h1>
+      <p>You just made me the happiest person ever. Come walk through our memories?</p>
+      <a class="journey-link" href="journey/index.html">Enter Our Journey ➜</a>
+    </div>
+
+    <div class="final" id="noScene" style="background:rgba(12,8,9,0.65)">
+      <h1>Hey… wait 😢</h1>
+      <p>I think you misclicked. Let's try that again?</p>
+      <button class="yes" id="goBackBtn" style="margin-top:2rem; font-size:1.2rem; padding:1rem 3rem;">Go Back 💘</button>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const goBackBtn = document.getElementById('goBackBtn');
+    const noWrapper = document.getElementById('noWrapper');
+    const emoji = document.getElementById('emoji');
+    const heartsContainer = document.getElementById('hearts');
+
+    let hoverCount = 0;
+
+    yesBtn.addEventListener('click', () => {
+      document.body.classList.remove('no-mode');
+      document.body.classList.add('yes-mode');
+      document.getElementById('yesScene').style.display = 'flex';
+      document.getElementById('noScene').style.display = 'none';
+    });
+
+    noWrapper.addEventListener('mouseenter', () => {
+      hoverCount++;
+
+      const x = Math.random() * 360 - 180;
+      const y = Math.random() * 140 - 70;
+      noWrapper.style.transform = `translate(${x}px, ${y}px)`;
+
+      if (hoverCount > 6) emoji.textContent = '🤬';
+      else if (hoverCount > 4) emoji.textContent = '😡';
+      else emoji.textContent = '😠';
+    });
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = Math.random() > 0.4 ? '❤' : '💗';
+
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = 12 + Math.random() * 22 + 'px';
+      heart.style.animationDuration = 6 + Math.random() * 7 + 's';
+
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 13000);
+    }
+
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.textContent = '✦';
+
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.fontSize = 10 + Math.random() * 16 + 'px';
+      sparkle.style.animationDuration = 3 + Math.random() * 4 + 's';
+
+      heartsContainer.appendChild(sparkle);
+
+      setTimeout(() => sparkle.remove(), 7000);
+    }
+
+    for (let i = 0; i < 16; i++) createHeart();
+    for (let i = 0; i < 12; i++) createSparkle();
+
+    setInterval(createHeart, 420);
+    setInterval(createSparkle, 900);
+
+    noBtn.addEventListener('click', () => {
+      document.body.classList.remove('yes-mode');
+      document.body.classList.add('no-mode');
+      document.getElementById('yesScene').style.display = 'none';
+      document.getElementById('noScene').style.display = 'flex';
+    });
+
+    goBackBtn.addEventListener('click', () => {
+      document.body.classList.remove('no-mode');
+      document.getElementById('noScene').style.display = 'none';
+      document.querySelector('.card').style.opacity = '1';
+      document.querySelector('.card').style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>
