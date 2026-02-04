@@ -3,417 +3,677 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Will You Be My Valentine? 💖</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-
+  <title>Friv ❤️ for my Meethi Lassi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-1: #ff9aa9;
-      --bg-2: #ffd2c7;
-      --bg-3: #ffe6a7;
-      --ink: #2a1b1e;
-      --accent: #ff4d6d;
-      --accent-deep: #d90429;
-      --glass: rgba(255,255,255,0.7);
-      --shadow: rgba(21, 12, 13, 0.2);
-      --glow: rgba(255, 77, 109, 0.35);
+      --ink: #fff5f7;
+      --accent: #ff6b88;
+      --accent-2: #ffd6a5;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      min-height: 100vh;
-      font-family: 'Space Grotesk', sans-serif;
-      background: radial-gradient(1200px 800px at 10% 10%, #fff2f6 0%, transparent 60%),
-                  radial-gradient(900px 600px at 90% 20%, #fff8de 0%, transparent 65%),
-                  linear-gradient(130deg, var(--bg-1), var(--bg-2) 55%, var(--bg-3));
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin: 0;
       overflow: hidden;
+      background: radial-gradient(900px 600px at 10% 10%, #1b0b1a 0%, transparent 60%),
+                  radial-gradient(700px 500px at 90% 20%, #1b0f0a 0%, transparent 60%),
+                  #050208;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
       color: var(--ink);
-      transition: background 0.8s ease;
     }
 
-    body::before {
-      content: '';
+    #overlay {
       position: fixed;
-      inset: -20vmax;
-      background: conic-gradient(from 90deg, rgba(255,255,255,0.25), rgba(255,255,255,0) 30%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0));
-      animation: drift 24s linear infinite;
-      z-index: 0;
-      filter: blur(12px);
-      opacity: 0.6;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
-      background-size: 3px 3px;
-      opacity: 0.25;
-      mix-blend-mode: multiply;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    body.yes-mode {
-      background: radial-gradient(900px 600px at 20% 10%, #fff0f5 0%, transparent 55%),
-                  linear-gradient(140deg, #ff6b85, #ff8fab 55%, #ffd6a5);
-    }
-
-    .scene {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      display: grid;
-      place-items: center;
-      padding: 4rem 1.5rem;
-    }
-
-    .card {
-      position: relative;
-      z-index: 5;
-      background: var(--glass);
-      padding: 3.5rem 3rem 4rem;
-      border-radius: 32px;
-      box-shadow: 0 30px 60px var(--shadow);
-      text-align: center;
-      max-width: 560px;
-      width: 92%;
-      margin: auto;
-      border: 1px solid rgba(255,255,255,0.6);
-      backdrop-filter: blur(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    body.yes-mode .card {
-      opacity: 0;
-      transform: scale(0.93) translateY(10px);
-      pointer-events: none;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.85);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-
-    h1 {
-      font-family: 'Fraunces', serif;
-      font-size: 2.6rem;
-      color: var(--accent-deep);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: rgba(33, 20, 23, 0.8);
-      margin-bottom: 2rem;
-      line-height: 1.65;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.6rem;
-      margin-top: 1.5rem;
-      position: relative;
-      flex-wrap: wrap;
-    }
-
-    button {
-      border: none;
-      padding: 0.95rem 2.4rem;
-      border-radius: 999px;
-      font-size: 1.05rem;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .yes {
-      background: linear-gradient(135deg, var(--accent), #ff8fab);
-      color: #fff;
-      box-shadow: 0 12px 30px var(--glow);
-    }
-
-    .yes:hover { transform: translateY(-3px) scale(1.02); }
-
-    .no-wrapper {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .no {
-      background: rgba(255,255,255,0.8);
-      color: #6b5760;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    }
-
-    .emoji {
-      position: absolute;
-      top: -40px;
+      bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 1.8rem;
+      color: var(--ink);
+      font-size: 1.1rem;
+      background: rgba(18, 8, 14, 0.75);
+      padding: 16px 26px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      z-index: 10;
+      backdrop-filter: blur(6px);
+      text-align: center;
+      letter-spacing: 0.02em;
+      box-shadow: 0 16px 30px rgba(0,0,0,0.35);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    #overlay .arrows {
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+    }
+
+    #overlay.hidden {
       opacity: 0;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateX(-50%) translateY(10px);
       pointer-events: none;
     }
 
-    .no-wrapper:hover .emoji {
+    #hud {
+      position: fixed;
+      left: 24px;
+      bottom: 24px;
+      z-index: 10;
+      background: rgba(8, 5, 10, 0.65);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 16px 18px;
+      max-width: 280px;
+      backdrop-filter: blur(6px);
+    }
+
+    #hud h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      color: var(--accent-2);
+      letter-spacing: 0.03em;
+    }
+
+    #hud p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    #memory {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 18px;
+      padding: 16px 18px;
+      max-width: 320px;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #memory.active {
       opacity: 1;
-      transform: translateX(-50%) translateY(-6px);
+      transform: translateY(0);
     }
 
-    .photo {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      border-radius: 24px;
-      object-fit: cover;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
-      animation: floatPhoto 10s ease-in-out infinite, rotatePhoto 14s ease-in-out infinite;
-      z-index: 2;
-      border: 6px solid rgba(255,255,255,0.8);
+    #memory h3 {
+      margin: 0 0 6px 0;
+      font-size: 1rem;
+      color: var(--accent);
     }
 
-    @keyframes rotatePhoto {
-      0%, 100% { transform: rotate(-3deg) scale(1); }
-      50% { transform: rotate(3deg) scale(1.08); }
+    #memory p {
+      margin: 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      line-height: 1.5;
     }
 
-    @keyframes floatPhoto {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-18px); }
-    }
-
-    .final {
-      position: absolute;
+    #finalScene {
+      position: fixed;
       inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       text-align: center;
-      color: #fff;
+      z-index: 20;
+      background: radial-gradient(900px 600px at 20% 10%, rgba(255,255,255,0.12) 0%, transparent 60%),
+                  radial-gradient(700px 500px at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                  rgba(5, 2, 8, 0.85);
+      backdrop-filter: blur(6px);
       opacity: 0;
-      transform: scale(1.08);
-      transition: opacity 1s ease, transform 1s ease;
-      z-index: 10;
       pointer-events: none;
+      transition: opacity 0.6s ease;
     }
 
-    body.yes-mode .final {
+    #finalScene.active {
       opacity: 1;
-      transform: scale(1);
       pointer-events: auto;
     }
 
-    .final h1 { font-size: 3rem; margin-bottom: 0.8rem; }
-    .final p { font-size: 1.25rem; max-width: 520px; }
+    #finalScene .final-card {
+      max-width: 560px;
+      padding: 3.2rem 2.8rem;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+    }
 
-    .journey-link {
-      margin-top: 1.5rem;
-      text-decoration: none;
+    #finalScene h2 {
+      margin: 0 0 0.9rem 0;
+      font-size: 2.2rem;
+      color: var(--accent-2);
+      letter-spacing: 0.02em;
+    }
+
+    #finalScene p {
+      margin: 0 0 1.6rem 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    #finalScene .final-question {
+      font-size: 1.5rem;
       color: #fff;
-      padding: 0.95rem 2.6rem;
+      margin-top: 1.2rem;
+    }
+
+    #finalScene .final-actions {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      min-height: 64px;
+    }
+
+    #finalScene button {
+      border: none;
+      padding: 0.9rem 2.4rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.5);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-      transition: transform 0.25s ease, background 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .journey-link:hover { transform: translateY(-2px); background: rgba(255,255,255,0.32); }
-
-    .hearts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 1;
+    #finalScene .yes-btn {
+      background: linear-gradient(135deg, #ff6b88, #ffd6a5);
+      color: #1b0b1a;
+      box-shadow: 0 14px 30px rgba(255, 107, 136, 0.35);
     }
 
-    .heart,
-    .sparkle {
-      position: absolute;
-      animation: floatHeart linear infinite;
-      user-select: none;
-      filter: drop-shadow(0 6px 10px rgba(255, 77, 109, 0.35));
+    #finalScene .no-btn {
+      background: rgba(255,255,255,0.15);
+      color: #fff5f7;
+      border: 1px solid rgba(255,255,255,0.3);
     }
 
-    .sparkle {
-      color: rgba(255, 255, 255, 0.9);
-      animation: driftSparkle ease-in-out infinite;
+    #finalAnswer {
+      margin-top: 1.8rem;
+      padding: 1.4rem 1.6rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    @keyframes floatHeart {
-      from {
-        transform: translateY(100vh) scale(0.8);
-        opacity: 0;
-      }
-      10% { opacity: 0.9; }
-      to {
-        transform: translateY(-12vh) scale(1.4);
-        opacity: 0;
-      }
-    }
-
-    @keyframes driftSparkle {
-      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.9; }
-      50% { transform: translateY(-30px) translateX(10px); opacity: 0.4; }
-    }
-
-    @keyframes drift {
-      from { transform: rotate(0deg) scale(1.05); }
-      to { transform: rotate(360deg) scale(1.05); }
+    #finalAnswer.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @media (max-width: 720px) {
-      .photo { width: 70px; height: 70px; border-radius: 18px; }
-      h1 { font-size: 2.15rem; }
-      .card { padding: 2.8rem 2.2rem 3.2rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
+      #hud, #memory { left: 16px; right: 16px; max-width: none; }
+      #memory { bottom: 96px; }
+      #overlay { bottom: 16px; }
     }
   </style>
 </head>
 <body>
-  <div class="hearts" id="hearts"></div>
-
-  <div class="scene">
-    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 1" style="top:8%; left:12%" />
-    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 2" style="top:15%; right:10%" />
-    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 3" style="top:45%; left:5%" />
-    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 4" style="top:60%; right:6%" />
-    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 5" style="bottom:12%; left:18%" />
-    <img class="photo" src="https://via.placeholder.com/150" alt="Memory 6" style="bottom:10%; right:20%" />
-
-    <div class="card">
-      <div class="badge">For you, always ✨</div>
-      <h1>Hey my love</h1>
-      <p>Every moment with you feels like my favorite place to be. I wanted to ask you something special, and I made a little world for us.</p>
-      <h1>Will you be my Valentine?</h1>
-
-      <div class="buttons">
-        <button class="yes" id="yesBtn">Yes 💖</button>
-
-        <div class="no-wrapper" id="noWrapper" style="padding:40px">
-          <span class="emoji" id="emoji">😠</span>
-          <button class="no" id="noBtn">No 🙈</button>
-        </div>
+  <div id="overlay"><span class="arrows">⬆️ ⬅️ ➡️</span> Move forward + turn · Space jump</div>
+  <div id="hud">
+    <h2>Interactive Journey</h2>
+    <p>Walk forward to relive the little moments. Each sign glows when you're close.</p>
+  </div>
+  <div id="memory">
+    <h3 id="memoryTitle">Memory</h3>
+    <p id="memoryText">A tiny moment we shared.</p>
+  </div>
+  <div id="finalScene">
+    <div class="final-card">
+      <h2>One last step</h2>
+      <p>The path ends here, but what we are is only beginning.</p>
+      <div class="final-question">Will you be my Valentine, and keep choosing this story with me?</div>
+      <div class="final-actions" id="finalActions">
+        <button class="yes-btn" id="finalYes">Yes, always 💞</button>
+        <button class="no-btn" id="finalNo">No</button>
+      </div>
+      <div id="finalAnswer">
+        Fer andar ki kar rahi ae? Bahar aa te mainu tight gale lag.
       </div>
     </div>
-
-    <div class="final" id="yesScene">
-      <h1>YAY!!! 🥰💞</h1>
-      <p>You just made me the happiest person ever. Come walk through our memories?</p>
-      <a class="journey-link" href="journey/index.html">Enter Our Journey ➜</a>
-    </div>
-
-    <div class="final" id="noScene" style="background:rgba(12,8,9,0.65)">
-      <h1>Hey… wait 😢</h1>
-      <p>I think you misclicked. Let's try that again?</p>
-      <button class="yes" id="goBackBtn" style="margin-top:2rem; font-size:1.2rem; padding:1rem 3rem;">Go Back 💘</button>
-    </div>
   </div>
+  <audio id="ambientAudio" src="assets/ambient.mp3" preload="auto" loop></audio>
+  <audio id="chimeAudio" src="assets/chime.mp3" preload="auto"></audio>
 
-  <script>
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
-    const goBackBtn = document.getElementById('goBackBtn');
-    const noWrapper = document.getElementById('noWrapper');
-    const emoji = document.getElementById('emoji');
-    const heartsContainer = document.getElementById('hearts');
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js';
 
-    let hoverCount = 0;
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x0d050a, 8, 120);
 
-    yesBtn.addEventListener('click', () => {
-      document.body.classList.remove('no-mode');
-      document.body.classList.add('yes-mode');
-      document.getElementById('yesScene').style.display = 'flex';
-      document.getElementById('noScene').style.display = 'none';
-    });
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 500);
+    camera.position.set(0, 2.8, 8);
 
-    noWrapper.addEventListener('mouseenter', () => {
-      hoverCount++;
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x050208);
+    document.body.appendChild(renderer.domElement);
 
-      const x = Math.random() * 360 - 180;
-      const y = Math.random() * 140 - 70;
-      noWrapper.style.transform = `translate(${x}px, ${y}px)`;
+    scene.add(new THREE.AmbientLight(0xffd7e5, 0.7));
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    dirLight.position.set(6, 10, 7);
+    scene.add(dirLight);
 
-      if (hoverCount > 6) emoji.textContent = '🤬';
-      else if (hoverCount > 4) emoji.textContent = '😡';
-      else emoji.textContent = '😠';
-    });
+    const pointLight = new THREE.PointLight(0xff8fb1, 0.9, 60, 2);
+    pointLight.position.set(0, 8, -20);
+    scene.add(pointLight);
 
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.textContent = Math.random() > 0.4 ? '❤' : '💗';
+    const groundDepth = 360;
+    const edgeZ = -195;
+    const ground = new THREE.Mesh(
+      new THREE.PlaneGeometry(320, groundDepth),
+      new THREE.MeshStandardMaterial({ color: 0x3a1525, roughness: 0.85, metalness: 0.12 })
+    );
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.z = edgeZ + groundDepth / 2;
+    scene.add(ground);
 
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.fontSize = 12 + Math.random() * 22 + 'px';
-      heart.style.animationDuration = 6 + Math.random() * 7 + 's';
+    const avatar = new THREE.Mesh(
+      new THREE.BoxGeometry(1, 2, 1),
+      new THREE.MeshStandardMaterial({ color: 0xff77aa, emissive: 0x1a050d })
+    );
+    avatar.position.y = 1;
+    avatar.position.z = 10;
+    scene.add(avatar);
 
-      heartsContainer.appendChild(heart);
+    const starsGeometry = new THREE.BufferGeometry();
+    const starCount = 1600;
+    const starPositions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      const i3 = i * 3;
+      starPositions[i3] = (Math.random() - 0.5) * 360;
+      starPositions[i3 + 1] = Math.random() * 80 + 10;
+      starPositions[i3 + 2] = (Math.random() - 0.5) * 360;
+    }
+    starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.6, sizeAttenuation: true });
+    const stars = new THREE.Points(starsGeometry, starsMaterial);
+    scene.add(stars);
 
-      setTimeout(() => heart.remove(), 13000);
+    const pathLights = [];
+    const lightMaterial = new THREE.MeshStandardMaterial({ color: 0xff7aa2, emissive: 0xff3d6d, emissiveIntensity: 1.5 });
+    for (let z = 0; z > -220; z -= 8) {
+      const light = new THREE.Mesh(new THREE.SphereGeometry(0.3, 16, 16), lightMaterial);
+      light.position.set(Math.sin(z * 0.1) * 2, 0.6, z);
+      scene.add(light);
+      pathLights.push(light);
     }
 
-    function createSparkle() {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.textContent = '✦';
+    let walkTime = 0;
 
-      sparkle.style.left = Math.random() * 100 + 'vw';
-      sparkle.style.top = Math.random() * 100 + 'vh';
-      sparkle.style.fontSize = 10 + Math.random() * 16 + 'px';
-      sparkle.style.animationDuration = 3 + Math.random() * 4 + 's';
+    const checkpoints = [
+      { z: -8, label: 'Reasons why you should be my Valentine', note: 'Follow the path and let the memories speak.' },
+      { z: -48, label: 'Reason 1 ❤️', note: 'We look awesome together' },
+      { z: -75, label: 'Reason 2 ✨', note: 'That laugh we could not stop sharing.' },
+      { z: -100, label: 'Reason 3 💕', note: 'You make the world feel softer' },
+      { z: -125, label: 'Reason 4 💫', note: 'The way your hand fits in mine.' }
+    ];
 
-      heartsContainer.appendChild(sparkle);
+    // Replace these with your own photos (place files in journey/assets/)
+    const memoryPhotos = [
+      'assets/IMG_0006.jpg',
+      'assets/IMG_6456.JPG',
+      'assets/IMG_6556.jpg',
+      'assets/IMG_9981.jpg'
+    ];
 
-      setTimeout(() => sparkle.remove(), 7000);
-    }
+    const textureLoader = new THREE.TextureLoader();
 
-    for (let i = 0; i < 16; i++) createHeart();
-    for (let i = 0; i < 12; i++) createSparkle();
-
-    setInterval(createHeart, 420);
-    setInterval(createSparkle, 900);
-
-    noBtn.addEventListener('click', () => {
-      document.body.classList.remove('yes-mode');
-      document.body.classList.add('no-mode');
-      document.getElementById('yesScene').style.display = 'none';
-      document.getElementById('noScene').style.display = 'flex';
+    let reasonsBoard = null;
+    checkpoints.forEach(cp => {
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0x1a0c14,
+        emissive: 0x000000,
+        roughness: 0.4,
+        metalness: 0.2
+      });
+      const board = new THREE.Mesh(
+        new THREE.PlaneGeometry(12, 5.5),
+        mat
+      );
+      board.position.set(0, 4, cp.z);
+      board.userData = { baseZ: cp.z, material: mat, label: cp.label, note: cp.note };
+      scene.add(board);
+      if (cp.label.startsWith('Reasons')) reasonsBoard = board;
     });
 
-    goBackBtn.addEventListener('click', () => {
-      document.body.classList.remove('no-mode');
-      document.getElementById('noScene').style.display = 'none';
-      document.querySelector('.card').style.opacity = '1';
-      document.querySelector('.card').style.transform = 'scale(1)';
+    function makeSignTexture(lines, options = {}) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1024;
+      canvas.height = 512;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#1a0c14';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#ffd6a5';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const main = lines[0] || '';
+      const sub = lines[1] || '';
+      const mainSize = options.mainSize || 64;
+      const subSize = options.subSize || 42;
+      const mainY = options.mainY || (canvas.height / 2 - 36);
+      const subY = options.subY || (canvas.height / 2 + 36);
+      ctx.font = `${mainSize}px "Space Grotesk", sans-serif`;
+      ctx.fillText(main, canvas.width / 2, mainY);
+      if (sub) {
+        ctx.font = `${subSize}px "Space Grotesk", sans-serif`;
+        ctx.fillText(sub, canvas.width / 2, subY);
+      }
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      return tex;
+    }
+
+    if (reasonsBoard) {
+      reasonsBoard.material.map = makeSignTexture(
+        ['Reasons why you should be my', 'Valentine ❤️❤️'],
+        { mainSize: 52, subSize: 72, mainY: 210, subY: 320 }
+      );
+      reasonsBoard.material.color.setHex(0xffffff);
+      reasonsBoard.material.needsUpdate = true;
+    }
+
+    // Apply photos to the reason boards (same order as memoryPhotos)
+    scene.traverse(obj => {
+      if (obj.isMesh && obj.userData?.label?.startsWith('Reason ') ) {
+        const memoryIndex = checkpoints.filter(cp => cp.label.startsWith('Reason '))
+          .findIndex(cp => cp.label === obj.userData.label);
+        const url = memoryPhotos[memoryIndex];
+        if (url) {
+          textureLoader.load(
+            url,
+            (tex) => {
+              tex.colorSpace = THREE.SRGBColorSpace;
+              if (url.toLowerCase().includes('img_9981')) {
+                tex.center.set(0.5, 0.5);
+                tex.rotation = -Math.PI / 2;
+              }
+              obj.material.map = tex;
+              obj.material.color.setHex(0xffffff);
+              obj.material.needsUpdate = true;
+            },
+            undefined,
+            () => {
+              console.warn('Failed to load texture:', url);
+            }
+          );
+        }
+      }
+    });
+
+    const jumpSign = new THREE.Mesh(
+      new THREE.PlaneGeometry(10, 4.5),
+      new THREE.MeshStandardMaterial({
+        color: 0x1a0c14,
+        emissive: 0x000000,
+        roughness: 0.4,
+        metalness: 0.2
+      })
+    );
+    jumpSign.position.set(-2.2, 1.8, edgeZ + 45);
+    jumpSign.rotation.y = 0.35;
+    jumpSign.userData = {
+      material: jumpSign.material,
+      label: 'Leap of faith baby ?',
+      note: 'The ground ends ahead.'
+    };
+    jumpSign.material.map = makeSignTexture(['Leap of faith baby ?', 'jump into the void']);
+    jumpSign.material.color.setHex(0xffffff);
+    jumpSign.material.needsUpdate = true;
+    scene.add(jumpSign);
+
+    const keys = {};
+    window.addEventListener('keydown', e => keys[e.key] = true);
+    window.addEventListener('keyup', e => keys[e.key] = false);
+
+    const speed = 0.30;
+    const turnSpeed = 0.05;
+
+    const memoryBox = document.getElementById('memory');
+    const memoryTitle = document.getElementById('memoryTitle');
+    const memoryText = document.getElementById('memoryText');
+    const overlay = document.getElementById('overlay');
+    const finalScene = document.getElementById('finalScene');
+    const finalYes = document.getElementById('finalYes');
+    const finalNo = document.getElementById('finalNo');
+    const finalAnswer = document.getElementById('finalAnswer');
+    const finalActions = document.getElementById('finalActions');
+    const ambientAudio = document.getElementById('ambientAudio');
+    const chimeAudio = document.getElementById('chimeAudio');
+
+    const actionsUsed = {
+      forward: false,
+      backward: false,
+      turn: false,
+      jump: false
+    };
+
+    let hasMoved = false;
+    let jumpVelocity = 0;
+    let jumpQueued = false;
+    let finalTriggered = false;
+    let isFalling = false;
+    let fallVelocity = 0;
+    let lastActiveBoard = null;
+
+    const trailGroup = new THREE.Group();
+    scene.add(trailGroup);
+    const trailPool = [];
+    const trailMax = 70;
+    for (let i = 0; i < trailMax; i++) {
+      const dot = new THREE.Mesh(
+        new THREE.SphereGeometry(0.08, 8, 8),
+        new THREE.MeshBasicMaterial({ color: 0xff8fb1, transparent: true, opacity: 0 })
+      );
+      dot.userData.life = 0;
+      trailGroup.add(dot);
+      trailPool.push(dot);
+    }
+    let lastTrailTime = 0;
+
+    function dropTrail() {
+      const now = performance.now();
+      if (now - lastTrailTime < 70) return;
+      lastTrailTime = now;
+      const dot = trailPool.find(p => p.userData.life <= 0);
+      if (!dot) return;
+      dot.position.set(avatar.position.x, avatar.position.y - 0.6, avatar.position.z);
+      dot.userData.life = 1;
+      dot.material.opacity = 0.9;
+    }
+
+    function updateTrail() {
+      for (const dot of trailPool) {
+        if (dot.userData.life > 0) {
+          dot.userData.life -= 0.02;
+          dot.material.opacity = Math.max(0, dot.userData.life);
+        }
+      }
+    }
+
+    function unlockAudio() {
+      if (ambientAudio) {
+        ambientAudio.volume = 0.35;
+        ambientAudio.play().catch(() => {});
+      }
+      window.removeEventListener('keydown', unlockAudio);
+      window.removeEventListener('pointerdown', unlockAudio);
+      window.removeEventListener('touchstart', unlockAudio);
+    }
+    window.addEventListener('keydown', unlockAudio);
+    window.addEventListener('pointerdown', unlockAudio);
+    window.addEventListener('touchstart', unlockAudio);
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(avatar.quaternion);
+
+      let moving = false;
+
+      if (!isFalling) {
+        if (keys['ArrowUp']) {
+          avatar.position.addScaledVector(forward, speed);
+          moving = true;
+          actionsUsed.forward = true;
+        }
+        if (keys['ArrowDown']) {
+          avatar.position.addScaledVector(forward, -speed * 0.7);
+          moving = true;
+          actionsUsed.backward = true;
+        }
+
+        if (keys['ArrowLeft']) {
+          avatar.rotation.y += turnSpeed;
+          actionsUsed.turn = true;
+        }
+        if (keys['ArrowRight']) {
+          avatar.rotation.y -= turnSpeed;
+          actionsUsed.turn = true;
+        }
+      }
+
+      const onGround = avatar.position.y <= 1.01;
+      if (keys[' '] && onGround && !jumpQueued) {
+        jumpVelocity = 0.28;
+        jumpQueued = true;
+        actionsUsed.jump = true;
+      }
+      if (!keys[' ']) jumpQueued = false;
+
+      if (jumpVelocity !== 0 || (!onGround && !isFalling)) {
+        avatar.position.y += jumpVelocity;
+        jumpVelocity -= 0.015;
+        if (avatar.position.y <= 1) {
+          avatar.position.y = 1;
+          jumpVelocity = 0;
+        }
+      } else if (!isFalling) {
+        avatar.position.y += (1 - avatar.position.y) * 0.1;
+      }
+
+      if (moving) {
+        hasMoved = true;
+        dropTrail();
+      }
+
+      if (!isFalling && avatar.position.z < edgeZ) {
+        isFalling = true;
+        fallVelocity = 0;
+      }
+
+      if (isFalling) {
+        fallVelocity -= 0.02;
+        avatar.position.y += fallVelocity;
+      }
+
+      let closest = null;
+      let closestDist = Infinity;
+
+      scene.traverse(obj => {
+        if (obj.isMesh && obj.userData?.material) {
+          const dist = avatar.position.distanceTo(obj.position);
+          const glow = dist < 12 ? 0x330812 : 0x000000;
+          obj.userData.material.emissive.setHex(glow);
+          obj.userData.material.emissiveIntensity = dist < 12 ? 0.35 : 0.0;
+          if (dist < closestDist) {
+            closestDist = dist;
+            closest = obj;
+          }
+        }
+      });
+
+      if (closest && closest.userData && closestDist < 12) {
+        if (closest === jumpSign || closest === reasonsBoard) {
+          memoryBox.classList.remove('active');
+        } else {
+          memoryTitle.textContent = closest.userData.label;
+          memoryText.textContent = closest.userData.note;
+          memoryBox.classList.add('active');
+          if (closest !== lastActiveBoard && chimeAudio) {
+            chimeAudio.currentTime = 0;
+            chimeAudio.volume = 0.6;
+            chimeAudio.play().catch(() => {});
+          }
+          lastActiveBoard = closest;
+        }
+      } else {
+        memoryBox.classList.remove('active');
+        lastActiveBoard = null;
+      }
+
+      camera.position.lerp(
+        new THREE.Vector3(
+          avatar.position.x - forward.x * 8,
+          avatar.position.y + 3.2,
+          avatar.position.z - forward.z * 8
+        ),
+        0.1
+      );
+      camera.lookAt(avatar.position);
+
+      if (hasMoved) overlay.classList.add('hidden');
+
+      if (!finalTriggered && isFalling && avatar.position.y < -18) {
+        finalTriggered = true;
+        finalScene.classList.add('active');
+      }
+
+      updateTrail();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    if (finalNo && finalActions) {
+      finalNo.style.position = 'relative';
+
+      function dodge() {
+        const x = Math.random() * 240 - 120;
+        const y = Math.random() * 90 - 45;
+        finalNo.style.transform = `translate(${x}px, ${y}px)`;
+      }
+
+      finalNo.addEventListener('mouseenter', dodge);
+
+      finalActions.addEventListener('mousemove', (e) => {
+        const rect = finalNo.getBoundingClientRect();
+        const bx = rect.left + rect.width / 2;
+        const by = rect.top + rect.height / 2;
+        const dx = e.clientX - bx;
+        const dy = e.clientY - by;
+        const distance = Math.hypot(dx, dy);
+        if (distance < 140) dodge();
+      });
+    }
+
+    if (finalYes) {
+      finalYes.addEventListener('click', () => {
+        finalAnswer.classList.add('active');
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
   </script>
 </body>
