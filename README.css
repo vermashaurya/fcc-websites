@@ -1,26 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 body {
-  width: 100%;
-  height: 100%;
-  margin: 1em auto;
-  text-align: center;
-  background-color: #1b1b32;
-  color: #f5f6f7;
-  margin-bottom: 5em;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+  padding: 40px 20px;
 }
-a {
-  color: #e1eb5e;
-}
+
+/* Header */
 h1 {
-  color: #e1eb5e;
-  font-size: 300%;
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #38bdf8;
 }
-a:hover {
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #94a3b8;
+}
+
+/* Grid layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Highlighted card */
+.highlight {
+  border: 1px solid #38bdf8;
+}
+
+/* Titles */
+.card h2 {
+  margin-bottom: 10px;
+  color: #f1f5f9;
+}
+
+/* Text */
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: #cbd5f5;
+}
+
+/* Links */
+.card a {
+  text-decoration: none;
+  color: #38bdf8;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.card a:hover {
   color: #ffffff;
 }
-hr {
-  width: 400px;
-}
-fieldset {
-  width: 70%;
-  margin: 0 auto;
+
+/* Responsive tweak */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
