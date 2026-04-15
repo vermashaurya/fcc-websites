@@ -1,67 +1,65 @@
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="README.css">
-<em>Website development projects with freeCodeCamp.org</em><br>
-  <br>
-  View the entire Catalogue at https://vermashaurya.github.io/fcc-websites/
-  </head>
+</head>
+
 <body>
-<h2>Project1 -</h2>                
-<br>
-HTML implementation,
-Published online hosted link -                                         
-<a href="https://vermashaurya.github.io/fcc-websites/CatPhotoApp/catphotoapp.html">CatPhotoApp website</a><br>       
-(A simple website structure with a form)
 
-<h2>Project2 -</h2>              
-<br>
-CSS integration on HTML,
-Published online hosted link -                                      
-<a href="https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html">CafeMenu website</a>
-<br>
-(A designed website displaying a well-aligned menu)
+<h1>🚀 freeCodeCamp Web Projects</h1>
+<p class="subtitle">A collection of my frontend experiments and learning journey</p>
 
+<div class="container">
 
-<h2>Project3 -</h2>
-<br>
-Complete CSS play-around,
-Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">ColorMarkers website</a> <br>
-(A display of CSS functionalities with multiple div elements)
+  <div class="card">
+    <h2>🐱 Cat Photo App</h2>
+    <p>Basic HTML structure with forms</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/CatPhotoApp/catphotoapp.html">View Project</a>
+  </div>
 
-<h2>Project4 -</h2>
-<br>
-Balanced, harmonious frontend,
-Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/RegistrationForm/registrationform.html"><strong>RegistrationForm website</strong></a> <br>
-(Various input tags, best SEO practices website)
+  <div class="card">
+    <h2>☕ Cafe Menu</h2>
+    <p>Styled layout with CSS</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html">View Project</a>
+  </div>
 
-<h2>Project5 -</h2>
-<br>
-Diving into CSS properties,
-Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/RothkoPainting/rothkopainting.html">RothkoPainting website</a> <br>
-(A CSS canvas for its properties)
+  <div class="card">
+    <h2>🎨 Color Markers</h2>
+    <p>CSS experimentation with colors and divs</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">View Project</a>
+  </div>
 
-<h2>Project6 -</h2>
-<br>
-Delve into CSS Flex,
-Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/photogallery.html">PhotoGallery website</a> <br>
-(Exploring the CSS Flexbox property)
+  <div class="card highlight">
+    <h2>📝 Registration Form</h2>
+    <p>Forms, inputs & SEO best practices</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/RegistrationForm/registrationform.html">View Project</a>
+  </div>
 
-<h2>Project7 -</h2>
-<br>
-Careful Div Craft, 
-Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/NutritionLabel/nutritionlabel.html">NutritionLabel website</a> <br>
-(Multiple divs that work together in harmony)
+  <div class="card">
+    <h2>🖼️ Rothko Painting</h2>
+    <p>CSS art experiment</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/RothkoPainting/rothkopainting.html">View Project</a>
+  </div>
 
-<h2>Project8 -</h2>
-<br>
-WebDev Accessibility,
-Published online hosted link -
-<a href="https://vermashaurya.github.io/fcc-websites/AccessibilityQuiz/accessibilityquiz.html">AccessibilityQuiz website</a> <br>
-(Best practices for webpage accessibility)
+  <div class="card">
+    <h2>📷 Photo Gallery</h2>
+    <p>Flexbox layout exploration</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/photogallery.html">View Project</a>
+  </div>
+
+  <div class="card">
+    <h2>🥗 Nutrition Label</h2>
+    <p>Precise layout using div structures</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/NutritionLabel/nutritionlabel.html">View Project</a>
+  </div>
+
+  <div class="card">
+    <h2>♿ Accessibility Quiz</h2>
+    <p>Accessibility best practices</p>
+    <a href="https://vermashaurya.github.io/fcc-websites/AccessibilityQuiz/accessibilityquiz.html">View Project</a>
+  </div>
+
+</div>
+
 </body>
 </html>
