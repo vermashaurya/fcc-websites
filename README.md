@@ -1,11 +1,11 @@
 # freeCodeCamp Web Development Projects
 
 A curated collection of my early web development projects built while learning through freeCodeCamp.  
-These projects focus on building strong fundamentals in HTML, CSS, layout design, and accessibility.
+These projects focus on building strong fundamentals in HTML, CSS, layout design, and accessibility.<br><br>
 
-🌐 **Live Catalogue (Recommended View):**  
+🌐 **Live Catalogue:** <br>
 https://vermashaurya.github.io/fcc-websites/
-
+<br><br>
 > The catalogue page provides a cleaner, interactive UI to explore all projects in one place.
 
 ---
@@ -94,5 +94,5 @@ the **live catalogue site** provides a more polished and modern experience to ex
 
 ---
 
-Feel free to contribute to this repository. 
+Feel free to contribute to this repository. <br>
 Happy Coding!
