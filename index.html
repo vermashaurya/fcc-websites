@@ -59,7 +59,7 @@
       position: relative;
       overflow: hidden;
       border: 1px solid #2a2a2a;
-      min-height: 180px;
+      min-height: 140px;
     }
 
     .card:hover {
@@ -224,6 +224,15 @@
 
   function toggleMode() {
     document.body.classList.toggle('light-mode');
+
+    const x = 50;
+    const y = 50;
+
+    if (document.body.classList.contains('light-mode')) {
+      bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #ffffff, #e5e5e5)`;
+    } else {
+      bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #222, #000)`;
+    }
   }
 </script>
 </html>
