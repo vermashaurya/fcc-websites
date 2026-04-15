@@ -64,3 +64,110 @@ Published online hosted link -
 (Best practices for webpage accessibility)
 </body>
 </html>
+# freeCodeCamp Web Development Projects
+
+A curated collection of my early web development projects built while learning through freeCodeCamp.  
+These projects focus on building strong fundamentals in HTML, CSS, layout design, and accessibility.
+
+🌐 **Live Catalogue (Recommended View):**  
+https://vermashaurya.github.io/fcc-websites/
+
+> The catalogue page provides a cleaner, interactive UI to explore all projects in one place.
+
+---
+
+## 📁 Project Showcase
+
+### Project 1 - CatPhotoApp
+**Focus:** HTML fundamentals  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/CatPhotoApp/catphotoapp.html  
+(CatPhotoApp website)  
+A simple website structure demonstrating basic HTML elements and form usage.
+
+---
+
+### Project 2 - CafeMenu
+**Focus:** CSS styling  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html  
+(CafeMenu website)  
+A styled menu layout showcasing alignment, spacing, and typography.
+
+---
+
+### Project 3 - ColorMarkers
+**Focus:** CSS properties  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html  
+(ColorMarkers website)  
+An exploration of colors, gradients, and styled div elements.
+
+---
+
+### Project 4 - RegistrationForm
+**Focus:** Forms + structure  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/RegistrationForm/registrationform.html  
+(RegistrationForm website)  
+A structured form demonstrating multiple input types and semantic HTML.
+
+---
+
+### Project 5 - RothkoPainting
+**Focus:** CSS creativity  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/RothkoPainting/rothkopainting.html  
+(RothkoPainting website)  
+A CSS-based visual experiment inspired by abstract art.
+
+---
+
+### Project 6 - PhotoGallery
+**Focus:** Flexbox  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/PhotoGallery/photogallery.html  
+(PhotoGallery website)  
+A responsive image gallery using Flexbox for layout control.
+
+---
+
+### Project 7 - NutritionLabel
+**Focus:** Layout precision  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/NutritionLabel/nutritionlabel.html  
+(NutritionLabel website)  
+A detailed layout replication using nested divs and alignment techniques.
+
+---
+
+### Project 8 - AccessibilityQuiz
+**Focus:** Accessibility  
+**Live Demo:**  
+https://vermashaurya.github.io/fcc-websites/AccessibilityQuiz/accessibilityquiz.html  
+(AccessibilityQuiz website)  
+A project emphasizing best practices for accessible web design.
+
+---
+
+## 🧠 What This Repository Demonstrates
+
+- Strong HTML fundamentals  
+- Progressive CSS learning (basics → layout → Flexbox)  
+- Attention to structure and semantics  
+- Early understanding of accessibility principles  
+
+---
+
+## 🚀 Note
+
+While these projects represent my starting point in web development,  
+the **live catalogue site** provides a more polished and modern experience to explore them.
+
+👉 https://vermashaurya.github.io/fcc-websites/
+
+---
+
+## 👨‍💻 Author
+
+Shaurya Verma
