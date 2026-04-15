@@ -59,7 +59,7 @@
       position: relative;
       overflow: hidden;
       border: 1px solid #2a2a2a;
-      min-height: 140px;
+      min-height: 120px;
     }
 
     .card:hover {
@@ -125,11 +125,11 @@
     }
 
     .light-mode .card a {
-      color: #0077ff;
+      color: #6b7280;
     }
 
     .light-mode .background {
-      background: radial-gradient(circle at center, #ffffff, #e5e5e5);
+      background: radial-gradient(circle at center, #e0e0e0, #ffffff);
     }
 
     footer {
@@ -216,7 +216,7 @@
     const x = e.clientX / window.innerWidth * 100;
     const y = e.clientY / window.innerHeight * 100;
     if (document.body.classList.contains('light-mode')) {
-      bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #ffffff, #e5e5e5)`;
+      bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #dcdcdc, #ffffff)`;
     } else {
       bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #222, #000)`;
     }
@@ -229,7 +229,7 @@
     const y = 50;
 
     if (document.body.classList.contains('light-mode')) {
-      bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #ffffff, #e5e5e5)`;
+      bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #dcdcdc, #ffffff)`;
     } else {
       bg.style.background = `radial-gradient(circle at ${x}% ${y}%, #222, #000)`;
     }
