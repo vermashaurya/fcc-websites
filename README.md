@@ -9,18 +9,19 @@
       }
 
       :root {
+        --bg: #f5f5f5;
+        --card: #ffffff;
+        --text: #111;
+        --muted: #555;
+        --accent: #2563eb;
+      }
+
+      .dark {
         --bg: #0a0a0a;
         --card: #111111;
         --text: #e5e5e5;
         --muted: #888;
         --accent: #4f9cff;
-      }
-
-      .light {
-        --bg: #f5f5f5;
-        --card: #ffffff;
-        --text: #111;
-        --muted: #555;
       }
 
       body {
@@ -78,7 +79,7 @@
 
       .container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 16px;
         max-width: 900px;
         margin: auto;
@@ -86,15 +87,26 @@
 
       .card {
         background: var(--card);
-        padding: 16px;
-        border-radius: 10px;
+        padding: 22px;
+        border-radius: 12px;
         transition: 0.25s ease;
-        border: 1px solid #1f1f1f;
+        border: 1px solid rgba(0,0,0,0.08);
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      }
+
+      .dark .card {
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.6);
       }
 
       .card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-5px);
         border-color: var(--accent);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
       }
 
       .card h3 {
@@ -137,15 +149,19 @@
           grid-template-columns: 1fr;
         }
       }
+      /* Hide raw style/script in GitHub preview */
+      style, script {
+        display: none !important;
+      }
     </style>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const toggle = document.getElementById("themeToggle");
         toggle.addEventListener("click", () => {
-          document.body.classList.toggle("light");
+          document.body.classList.toggle("dark");
           toggle.textContent =
-            document.body.classList.contains("light") ? "🌙" : "☀️";
+            document.body.classList.contains("dark") ? "☀️" : "🌙";
         });
       });
     </script>
@@ -154,10 +170,10 @@
 <body>
 
 <nav class="navbar">
-  <div class="logo">fcc-websites</div>
+  <div class="logo">How I started as a web developer</div>
   <div class="nav-right">
-    <a href="https://vermashaurya.github.io/fcc-websites/" target="_blank">Open Catalogue</a>
-    <button id="themeToggle">☀️</button>
+    <a>Toggle Dark Mode</a>
+    <button id="themeToggle">🌙</button>
   </div>
 </nav>
 
