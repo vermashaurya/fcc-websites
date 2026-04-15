@@ -1,8 +1,155 @@
 <html>
 <head>
-  <link rel="stylesheet" href="README.css">
-  <script defer src="theme.js"></script>
-</head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Inter, system-ui, sans-serif;
+      }
+
+      :root {
+        --bg: #0a0a0a;
+        --card: #111111;
+        --text: #e5e5e5;
+        --muted: #888;
+        --accent: #4f9cff;
+      }
+
+      .light {
+        --bg: #f5f5f5;
+        --card: #ffffff;
+        --text: #111;
+        --muted: #555;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        padding: 20px;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .logo {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .nav-right {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .nav-right a {
+        text-decoration: none;
+        color: var(--text);
+        font-size: 0.9rem;
+      }
+
+      #themeToggle {
+        border: none;
+        background: var(--card);
+        color: var(--text);
+        padding: 6px 10px;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+      }
+
+      .hero p {
+        color: var(--muted);
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .card {
+        background: var(--card);
+        padding: 16px;
+        border-radius: 10px;
+        transition: 0.25s ease;
+        border: 1px solid #1f1f1f;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+      }
+
+      .card h3 {
+        margin-bottom: 6px;
+        font-size: 1rem;
+      }
+
+      .card p {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .card a {
+        text-decoration: none;
+        font-size: 0.85rem;
+        color: var(--accent);
+      }
+
+      .highlight {
+        border-color: var(--accent);
+      }
+
+      footer {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      footer a {
+        display: block;
+        margin-top: 8px;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("themeToggle");
+        toggle.addEventListener("click", () => {
+          document.body.classList.toggle("light");
+          toggle.textContent =
+            document.body.classList.contains("light") ? "🌙" : "☀️";
+        });
+      });
+    </script>
+  </head>
 
 <body>
 
