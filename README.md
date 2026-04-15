@@ -1,245 +1,66 @@
 <html>
 <head>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Inter, system-ui, sans-serif;
-      }
-
-      :root {
-        --bg: #f5f5f5;
-        --card: #ffffff;
-        --text: #111;
-        --muted: #555;
-        --accent: #2563eb;
-      }
-
-      .dark {
-        --bg: #0a0a0a;
-        --card: #111111;
-        --text: #e5e5e5;
-        --muted: #888;
-        --accent: #4f9cff;
-      }
-
-      body {
-        background: var(--bg);
-        color: var(--text);
-        padding: 20px;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-      }
-
-      .logo {
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      .nav-right {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .nav-right a {
-        text-decoration: none;
-        color: var(--text);
-        font-size: 0.9rem;
-      }
-
-      #themeToggle {
-        border: none;
-        background: var(--card);
-        color: var(--text);
-        padding: 6px 10px;
-        cursor: pointer;
-        border-radius: 6px;
-      }
-
-      .hero {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 8px;
-      }
-
-      .hero p {
-        color: var(--muted);
-      }
-
-      .container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-        max-width: 900px;
-        margin: auto;
-      }
-
-      .card {
-        background: var(--card);
-        padding: 22px;
-        border-radius: 12px;
-        transition: 0.25s ease;
-        border: 1px solid rgba(0,0,0,0.08);
-        min-height: 140px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      }
-
-      .dark .card {
-        border: 1px solid rgba(255,255,255,0.12);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      }
-
-      .card h3 {
-        margin-bottom: 6px;
-        font-size: 1rem;
-      }
-
-      .card p {
-        font-size: 0.8rem;
-        color: var(--muted);
-        margin-bottom: 10px;
-      }
-
-      .card a {
-        text-decoration: none;
-        font-size: 0.85rem;
-        color: var(--accent);
-      }
-
-      .highlight {
-        border-color: var(--accent);
-      }
-
-      footer {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 0.8rem;
-        color: var(--muted);
-      }
-
-      footer a {
-        display: block;
-        margin-top: 8px;
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      @media (max-width: 600px) {
-        .container {
-          grid-template-columns: 1fr;
-        }
-      }
-      /* Hide raw style/script in GitHub preview */
-      style, script {
-        display: none !important;
-      }
-    </style>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggle = document.getElementById("themeToggle");
-        toggle.addEventListener("click", () => {
-          document.body.classList.toggle("dark");
-          toggle.textContent =
-            document.body.classList.contains("dark") ? "☀️" : "🌙";
-        });
-      });
-    </script>
+  <link rel="stylesheet" href="README.css">
+<em>Website development projects with freeCodeCamp.org</em><br>
+  <br>
+  View the entire Catalogue at https://vermashaurya.github.io/fcc-websites/
   </head>
-
 <body>
+<h2>Project1 -</h2>                
+<br>
+HTML implementation,
+Published online hosted link -                                         
+<a href="https://vermashaurya.github.io/fcc-websites/CatPhotoApp/catphotoapp.html">CatPhotoApp website</a><br>       
+(A simple website structure with a form)
 
-<nav class="navbar">
-  <div class="logo">How I started as a web developer</div>
-  <div class="nav-right">
-    <a>Toggle Dark Mode</a>
-    <button id="themeToggle">🌙</button>
-  </div>
-</nav>
+<h2>Project2 -</h2>              
+<br>
+CSS integration on HTML,
+Published online hosted link -                                      
+<a href="https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html">CafeMenu website</a>
+<br>
+(A designed website displaying a well-aligned menu)
 
-<section class="hero">
-  <h1>freeCodeCamp Web Projects</h1>
-  <p>A collection of frontend experiments and learning work</p>
-</section>
+<h2>Project3 -</h2>
+<br>
+Complete CSS play-around,
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">ColorMarkers website</a> <br>
+(A display of CSS functionalities with multiple div elements)
 
-<div class="container">
+<h2>Project4 -</h2>
+<br>
+Balanced, harmonious frontend,
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/RegistrationForm/registrationform.html"><strong>RegistrationForm website</strong></a> <br>
+(Various input tags, best SEO practices website)
 
-  <div class="card">
-    <h3>Cat Photo App</h3>
-    <p>Basic HTML structure with forms</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/CatPhotoApp/catphotoapp.html">View Project</a>
-  </div>
+<h2>Project5 -</h2>
+<br>
+Diving into CSS properties,
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/RothkoPainting/rothkopainting.html">RothkoPainting website</a> <br>
+(A CSS canvas for its properties)
 
-  <div class="card">
-    <h3>Cafe Menu</h3>
-    <p>Styled layout using CSS</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/CafeMenu/cafemenu.html">View Project</a>
-  </div>
+<h2>Project6 -</h2>
+<br>
+Delve into CSS Flex,
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/photogallery.html">PhotoGallery website</a> <br>
+(Exploring the CSS Flexbox property)
 
-  <div class="card">
-    <h3>Color Markers</h3>
-    <p>CSS experimentation with colors</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/ColorMarker/colormarker.html">View Project</a>
-  </div>
+<h2>Project7 -</h2>
+<br>
+Careful Div Craft, 
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/NutritionLabel/nutritionlabel.html">NutritionLabel website</a> <br>
+(Multiple divs that work together in harmony)
 
-  <div class="card highlight">
-    <h3>Registration Form</h3>
-    <p>Forms, inputs & SEO practices</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/RegistrationForm/registrationform.html">View Project</a>
-  </div>
-
-  <div class="card">
-    <h3>Rothko Painting</h3>
-    <p>CSS art experiment</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/RothkoPainting/rothkopainting.html">View Project</a>
-  </div>
-
-  <div class="card">
-    <h3>Photo Gallery</h3>
-    <p>Flexbox layout exploration</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/PhotoGallery/photogallery.html">View Project</a>
-  </div>
-
-  <div class="card">
-    <h3>Nutrition Label</h3>
-    <p>Structured layout using divs</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/NutritionLabel/nutritionlabel.html">View Project</a>
-  </div>
-
-  <div class="card">
-    <h3>Accessibility Quiz</h3>
-    <p>Accessibility best practices</p>
-    <a href="https://vermashaurya.github.io/fcc-websites/AccessibilityQuiz/accessibilityquiz.html">View Project</a>
-  </div>
-
-</div>
-
-<footer>
-  <p>© 2026 Shaurya Verma</p>
-  <a href="https://vermashaurya.github.io/fcc-websites/" target="_blank">
-    View Full Catalogue
-  </a>
-</footer>
-
+<h2>Project8 -</h2>
+<br>
+WebDev Accessibility,
+Published online hosted link -
+<a href="https://vermashaurya.github.io/fcc-websites/AccessibilityQuiz/accessibilityquiz.html">AccessibilityQuiz website</a> <br>
+(Best practices for webpage accessibility)
 </body>
 </html>
