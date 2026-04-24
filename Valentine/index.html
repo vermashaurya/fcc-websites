@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,8 +17,8 @@
       margin: 0;
       overflow: hidden;
       background: radial-gradient(900px 600px at 10% 10%, #1b0b1a 0%, transparent 60%),
-                  radial-gradient(700px 500px at 90% 20%, #1b0f0a 0%, transparent 60%),
-                  #050208;
+        radial-gradient(700px 500px at 90% 20%, #1b0f0a 0%, transparent 60%),
+        #050208;
       font-family: 'Space Grotesk', system-ui, sans-serif;
       color: var(--ink);
     }
@@ -32,12 +33,12 @@
       background: rgba(18, 8, 14, 0.75);
       padding: 16px 26px;
       border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       z-index: 10;
       backdrop-filter: blur(6px);
       text-align: center;
       letter-spacing: 0.02em;
-      box-shadow: 0 16px 30px rgba(0,0,0,0.35);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
       transition: opacity 0.4s ease, transform 0.4s ease;
       text-transform: uppercase;
       font-weight: 600;
@@ -63,7 +64,7 @@
       bottom: 24px;
       z-index: 10;
       background: rgba(8, 5, 10, 0.65);
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 18px;
       padding: 16px 18px;
       max-width: 280px;
@@ -90,7 +91,7 @@
       bottom: 24px;
       z-index: 10;
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 18px;
       padding: 16px 18px;
       max-width: 320px;
@@ -126,10 +127,10 @@
       justify-content: center;
       text-align: center;
       z-index: 20;
-      background: radial-gradient(900px 600px at 20% 10%, rgba(255,255,255,0.12) 0%, transparent 60%),
-                  radial-gradient(700px 500px at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 60%),
-                  rgba(5, 2, 8, 0.85);
-      backdrop-filter: blur(6px);
+      background: radial-gradient(900px 600px at 20% 10%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(700px 500px at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+        rgba(5, 2, 8, 0.85);
+      backdrop-filter: blur(1px);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.6s ease;
@@ -144,9 +145,9 @@
       max-width: 560px;
       padding: 3.2rem 2.8rem;
       border-radius: 28px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
     }
 
     #finalScene h2 {
@@ -196,17 +197,17 @@
     }
 
     #finalScene .no-btn {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       color: #fff5f7;
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     #finalAnswer {
       margin-top: 1.8rem;
       padding: 1.4rem 1.6rem;
       border-radius: 20px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       opacity: 0;
       transform: translateY(8px);
       transition: opacity 0.4s ease, transform 0.4s ease;
@@ -217,13 +218,55 @@
       transform: translateY(0);
     }
 
+    #subtitle-container {
+      position: fixed;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%) translateX(-20px);
+      z-index: 15;
+      max-width: 400px;
+      pointer-events: none;
+      font-size: 2.2rem;
+      color: var(--accent-2);
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.8);
+      font-weight: 500;
+      line-height: 1.3;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      font-style: italic;
+    }
+
+    #subtitle-container.active {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
     @media (max-width: 720px) {
-      #hud, #memory { left: 16px; right: 16px; max-width: none; }
-      #memory { bottom: 96px; }
-      #overlay { bottom: 16px; }
+      #subtitle-container {
+        left: 20px;
+        right: 20px;
+        font-size: 1.6rem;
+        top: 35%;
+      }
+
+      #hud,
+      #memory {
+        left: 16px;
+        right: 16px;
+        max-width: none;
+      }
+
+      #memory {
+        bottom: 96px;
+      }
+
+      #overlay {
+        bottom: 16px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div id="overlay"><span class="arrows">⬆️ ⬅️ ➡️</span> Move forward + turn · Space jump</div>
   <div id="hud">
@@ -248,7 +291,8 @@
       </div>
     </div>
   </div>
-  <audio id="ambientAudio" src="assets/ambient.mp3" preload="auto" loop></audio>
+  <div id="subtitle-container"></div>
+  <audio id="ambientAudio" src="assets/back-to-being-friends.mp3" preload="auto" loop></audio>
   <audio id="chimeAudio" src="assets/chime.mp3" preload="auto"></audio>
 
   <script type="module">
@@ -392,7 +436,7 @@
 
     // Apply photos to the reason boards (same order as memoryPhotos)
     scene.traverse(obj => {
-      if (obj.isMesh && obj.userData?.label?.startsWith('Reason ') ) {
+      if (obj.isMesh && obj.userData?.label?.startsWith('Reason ')) {
         const memoryIndex = checkpoints.filter(cp => cp.label.startsWith('Reason '))
           .findIndex(cp => cp.label === obj.userData.label);
         const url = memoryPhotos[memoryIndex];
@@ -457,6 +501,19 @@
     const finalActions = document.getElementById('finalActions');
     const ambientAudio = document.getElementById('ambientAudio');
     const chimeAudio = document.getElementById('chimeAudio');
+    const subtitleContainer = document.getElementById('subtitle-container');
+
+    const subtitles = [
+      { start: 1.8, end: 6.6, text: "How can we go back to being friends" },
+      { start: 6.7, end: 10.6, text: "When we just shared a bed?" },
+      { start: 12.1, end: 16.8, text: "How can you look at me and pretend" },
+      { start: 16.9, end: 21.1, text: "I'm someone you've never met?" },
+      { start: 22.2, end: 26.6, text: "It was last December" },
+      { start: 26.7, end: 29.9, text: "You were layin' on my chest" },
+      { start: 31.5, end: 37.0, text: "I still remember" },
+      { start: 37.1, end: 39.8, text: "I was scared to take a breath" },
+      { start: 39.9, end: 42.0, text: "Didn't want you to movе your head" }
+    ];
 
     const actionsUsed = {
       forward: false,
@@ -511,7 +568,7 @@
     function unlockAudio() {
       if (ambientAudio) {
         ambientAudio.volume = 0.35;
-        ambientAudio.play().catch(() => {});
+        ambientAudio.play().catch(() => { });
       }
       window.removeEventListener('keydown', unlockAudio);
       window.removeEventListener('pointerdown', unlockAudio);
@@ -610,7 +667,7 @@
           if (closest !== lastActiveBoard && chimeAudio) {
             chimeAudio.currentTime = 0;
             chimeAudio.volume = 0.6;
-            chimeAudio.play().catch(() => {});
+            chimeAudio.play().catch(() => { });
           }
           lastActiveBoard = closest;
         }
@@ -634,6 +691,31 @@
       if (!finalTriggered && isFalling && avatar.position.y < -18) {
         finalTriggered = true;
         finalScene.classList.add('active');
+      }
+
+      if (ambientAudio && subtitleContainer) {
+        const time = ambientAudio.currentTime;
+        let activeSubtitle = null;
+        for (let i = 0; i < subtitles.length; i++) {
+          if (time >= subtitles[i].start && time <= subtitles[i].end) {
+            activeSubtitle = subtitles[i].text;
+            break;
+          }
+        }
+
+        if (activeSubtitle) {
+          if (subtitleContainer.textContent !== activeSubtitle) {
+            subtitleContainer.classList.remove('active');
+            subtitleContainer.textContent = activeSubtitle;
+            setTimeout(() => {
+              subtitleContainer.classList.add('active');
+            }, 30);
+          } else if (!subtitleContainer.classList.contains('active')) {
+            subtitleContainer.classList.add('active');
+          }
+        } else {
+          subtitleContainer.classList.remove('active');
+        }
       }
 
       updateTrail();
@@ -677,4 +759,5 @@
     });
   </script>
 </body>
+
 </html>
